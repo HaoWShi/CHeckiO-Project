@@ -1,0 +1,30 @@
+The Most Wanted Letter？
+#function 
+def getMostLetter(password):
+    pass_lower = password.lower()
+    lst = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    princ = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+    for i in pass_lower:
+        cnt = 0
+        for j in princ:
+            if i == j:
+                lst[cnt] = lst[cnt] + 1
+            cnt = cnt + 1
+    lstmax = max(lst)
+    index_letter = lst.index(lstmax)
+    return princ[index_letter]
+    
+  other solves:
+  
+  
+  import string
+
+def checkio(text):
+    """
+    We iterate through latyn alphabet and count each letter in the text.
+    Then 'max' selects the most frequent letter.
+    For the case when we have several equal letter,
+    'max' selects the first from they.
+    """
+    text = text.lower()
+    return max(string.ascii_lowercase, key=text.count)
